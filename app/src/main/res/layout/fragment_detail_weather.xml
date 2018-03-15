@@ -1,0 +1,381 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2753D7"
+    tools:context="com.weather.thantsintoe.myanmarweatherapp.fragments.DetailWeatherFragment">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/detail_view_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/detail_screen_topview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/yangon_bg_lg">
+
+                <TextView
+                    android:id="@+id/city_name_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Yangon"
+                    android:textColor="#F4E791"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/current_temp"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="20"
+                    android:textColor="#fff"
+                    android:textSize="58sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/city_name_detail" />
+
+                <TextView
+                    android:id="@+id/today_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Today"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/current_temp" />
+
+                <ImageView
+                    android:id="@+id/current_icon_large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="42dp"
+                    android:layout_marginRight="41dp"
+                    android:layout_marginTop="42dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/cloudy4" />
+
+                <TextView
+                    android:id="@+id/current_weather_condition_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="19dp"
+                    android:gravity="center_vertical"
+                    android:text="တိမ်ထူထပ်"
+                    android:textColor="#fff"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/current_icon_large"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintHorizontal_bias="0.914" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/today_date">
+
+                    <LinearLayout
+                        android:id="@+id/humidity_container"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="#22ffffff"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/humidity_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="စိုထိုင္းဆ"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="10sp" />
+
+                        <ImageView
+                            android:id="@+id/humidity_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0dp"
+                            app:srcCompat="@drawable/pressure_icon" />
+
+                        <TextView
+                            android:id="@+id/humidity_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Humidity"
+                            android:textAlignment="center"
+                            android:textColor="#fff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pressure_container"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="#22ffffff"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/pressure_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="ေလဖိအား"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="10sp" />
+
+                        <ImageView
+                            android:id="@+id/pressure_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0dp"
+                            app:srcCompat="@drawable/pressure_icon" />
+
+                        <TextView
+                            android:id="@+id/pressure_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Humidity"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            tools:text="29 lb" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/wind_container"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="#22ffffff"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/wind_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="ေလတိုက္ႏွုန္း"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="10sp" />
+
+                        <ImageView
+                            android:id="@+id/wind_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0dp"
+                            app:srcCompat="@drawable/wind_icon" />
+
+                        <TextView
+                            android:id="@+id/wind_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Humidity"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            tools:text="78%" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rainfall_container"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="#22ffffff"
+                        android:orientation="vertical"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="8dp">
+
+                        <TextView
+                            android:id="@+id/rainfall_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="မိုးရြာနိုင္ေျခ"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="10sp" />
+
+                        <ImageView
+                            android:id="@+id/rainfall_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0dp"
+                            app:srcCompat="@drawable/rainfall_icon" />
+
+                        <TextView
+                            android:id="@+id/rainfall_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Humidity"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            tools:text="29 lb" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/hourly_forecast_heading"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:text="နာရီအလိုက္ခန႔္မွန္းခ်က္"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/hourly_title_column"
+                    android:layout_width="70dp"
+                    android:layout_height="140dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#22000000"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="0dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="#22000000"
+                        android:padding="10dp"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/hourly_forecast_title_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="15dp"
+                        android:text="ရာသီဉတု"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/hourly_forecast_title_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="အပူခ်ိန္"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/hourly_forecast_title_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="ရြာရန္ရာႏွုန္း"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/hourly_forecast_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#11000000" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/daily_forecast_heading"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:text="ေန႔အလိုက္ခန႔္မွန္းခ်က္"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/daily_forecast_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#22ffffff" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</FrameLayout>

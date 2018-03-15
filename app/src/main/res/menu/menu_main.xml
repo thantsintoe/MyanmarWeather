@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.weather.thantsintoe.myanmarweatherapp.activities.MainActivity">
+
+
+    <item
+        android:id="@+id/addicon"
+        android:icon="@drawable/location"
+        android:orderInCategory="102"
+        android:title="@string/action_settings"
+        app:showAsAction="always" />
+</menu>
